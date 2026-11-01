@@ -1,87 +1,400 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EV Market Performance & Insights</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .hero { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 30px 20px; border-radius: 8px; margin-bottom: 25px; }
-        .kpi-card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 20px; margin-bottom: 20px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EV Market Performance & Insights | Rahi</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        background: #f4f4f0;
+        color: #292d2a;
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 1150px;
+    }
+
+    .hero {
+        background: #292d2a;
+        color: white;
+        padding: 35px 25px;
+        border-radius: 6px;
+        margin-bottom: 30px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .hero p {
+        color: #d1d5d1;
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .author {
+        color: #e8a34a;
+        font-size: 13px;
+        margin-top: 15px;
+    }
+
+    .section-title {
+        font-size: 21px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .section-subtitle {
+        color: #777d77;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .kpi-card {
+        background: white;
+        padding: 20px 15px;
+        border: 1px solid #e4e4dd;
+        border-radius: 6px;
+        height: 100%;
+    }
+
+    .kpi-card h6 {
+        color: #777d77;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .kpi-card h3 {
+        font-size: 23px;
+        font-weight: 700;
+        margin: 12px 0 5px;
+        color: #397d70;
+    }
+
+    .kpi-card small {
+        color: #999;
+        font-size: 11px;
+    }
+
+    .content-card {
+        background: white;
+        border: 1px solid #e4e4dd;
+        border-radius: 6px;
+        padding: 22px;
+        margin-top: 25px;
+    }
+
+    .content-card h5 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .overview-text {
+        font-size: 13px;
+        color: #707770;
+        line-height: 1.8;
+    }
+
+    .tech {
+        display: inline-block;
+        background: #edf1ec;
+        color: #397d70;
+        padding: 7px 12px;
+        margin: 4px;
+        font-size: 12px;
+        border-radius: 4px;
+    }
+
+    .tableau-container {
+        width: 100%;
+        min-height: 650px;
+    }
+
+    .tableauPlaceholder {
+        width: 100%;
+        position: relative;
+    }
+
+    .tableauViz {
+        width: 100%;
+    }
+
+    .project-link {
+        display: inline-block;
+        background: #292d2a;
+        color: white;
+        text-decoration: none;
+        padding: 10px 18px;
+        margin: 5px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    .project-link:hover {
+        background: #397d70;
+        color: white;
+    }
+
+    footer {
+        text-align: center;
+        padding: 25px 10px;
+        color: #888;
+        font-size: 12px;
+        margin-top: 25px;
+    }
+
+    @media(max-width: 768px) {
+        .hero h1 {
+            font-size: 23px;
+        }
+
+        .kpi-card h3 {
+            font-size: 21px;
+        }
+
+        .content-card {
+            padding: 15px;
+        }
+    }
+</style>
 </head>
+
 <body>
-    <div class="container my-4">
-        <div class="hero text-center">
-            <h1>Electric Vehicle Market Performance & Insights</h1>
-            <p class="lead">Interactive Executive Dashboard & Analytics for Decision-Making</p>
+
+<div class="container my-4">
+
+    <!-- HEADER -->
+
+    <div class="hero">
+        <h1>Electric Vehicle Market Performance & Insights</h1>
+
+        <p>EV Sales | Manufacturers | Categories | Range | Pricing</p>
+
+        <div class="author">
+            Developed by Rahi | Data Analytics with Tableau
         </div>
-
-        <div class="row text-center mb-4">
-            <div class="col-md-3">
-                <div class="kpi-card">
-                    <h6 class="text-muted">Total Categories</h6>
-                    <h3 class="text-primary">6 Segments</h3>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="kpi-card">
-                    <h6 class="text-muted">Leading Chemistries</h6>
-                    <h3 class="text-success">LFP, NMC, Solid-State</h3>
-                </div>
-            </div>
-            <div class="col-md-3">
-
-
-                <div class="kpi-card">
-                    <h6 class="text-muted">Avg Range</h6>
-                    <h3 class="text-info">420+ km</h3>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="kpi-card">
-                    <h6 class="text-muted">Avg Customer Rating</h6>
-                    <h3 class="text-warning">4.3 / 5.0</h3>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tableau Dashboard Embed Container -->
-       <div class="card p-3 shadow-sm">
-    <h5 class="card-title text-secondary">Tableau Interactive Visualizations</h5>
-
-    <div class='tableauPlaceholder' id='viz1793558917947' style='position: relative'>
-        <noscript>
-            <a href='#'>
-                <img alt='EV Market Performance Dashboard'
-                     src='https://public.tableau.com/static/images/EV/EVmarketperformancedashboard_17935581001030/Dashboard1/1_rss.png'
-                     style='border: none' />
-            </a>
-        </noscript>
-
-        <object class='tableauViz' style='display:none;'>
-            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-            <param name='embed_code_version' value='3' />
-            <param name='site_root' value='' />
-            <param name='name' value='EVmarketperformancedashboard_17935581001030/Dashboard1' />
-            <param name='tabs' value='no' />
-            <param name='toolbar' value='yes' />
-            <param name='language' value='en-GB' />
-        </object>
     </div>
 
-    <script type='text/javascript'>
-        var divElement = document.getElementById('viz1793558917947');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.width = '100%';
-        vizElement.style.height = '800px';
 
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    </script>
+    <!-- KPI SECTION -->
+
+    <section>
+
+        <h2 class="section-title">EV Market at a Glance</h2>
+
+        <p class="section-subtitle">
+            Key Performance Indicators (KPIs)
+        </p>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-3">
+
+            <div class="col">
+                <div class="kpi-card">
+                    <h6>Total EV Sales</h6>
+                    <h3>9.96M</h3>
+                    <small>9,964,159 units</small>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="kpi-card">
+                    <h6>Top Manufacturer</h6>
+                    <h3>Tesla</h3>
+                    <small>1.18M sales units</small>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="kpi-card">
+                    <h6>Leading Category</h6>
+                    <h3>SUV</h3>
+                    <small>5.38M sales units</small>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="kpi-card">
+                    <h6>Average Range</h6>
+                    <h3>383 km</h3>
+                    <small>Average driving range</small>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="kpi-card">
+                    <h6>Average EV Price</h6>
+                    <h3>₹93.25 L</h3>
+                    <small>Approx. INR conversion</small>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="section-subtitle mt-3">
+            Note: Price converted from USD at an indicative rate of ₹94.91/USD.
+        </p>
+
+    </section>
+
+
+    <!-- OVERVIEW -->
+
+    <section class="content-card">
+
+        <h5>Project Overview</h5>
+
+        <p class="overview-text">
+            Analysis of EV market data to understand sales trends,
+            manufacturer performance, vehicle categories, driving range
+            and pricing patterns.
+        </p>
+
+        <p class="overview-text mb-0">
+            <strong>Dataset:</strong> 112 Records |
+            15 Manufacturers | 6 Categories | 2021–2024
+        </p>
+
+    </section>
+
+
+    <!-- TABLEAU DASHBOARD -->
+
+    <section class="content-card">
+
+        <h5>Tableau Interactive Dashboard</h5>
+
+        <p class="section-subtitle">
+            Explore the visual analysis and market comparisons.
+        </p>
+
+        <div class="tableau-container">
+
+            <div class="tableauPlaceholder"
+                 id="viz1793558917947"
+                 style="position: relative;">
+
+                <noscript>
+                    <a href="https://public.tableau.com/views/EVmarketperformancedashboard_17935581001030/Dashboard1">
+                        <img
+                            alt="EV Market Performance Dashboard"
+                            src="https://public.tableau.com/static/images/EV/EVmarketperformancedashboard_17935581001030/Dashboard1/1_rss.png"
+                            style="width:100%; border:none;"
+                        />
+                    </a>
+                </noscript>
+
+                <object class="tableauViz" style="display:none;">
+
+                    <param name="host_url"
+                           value="https%3A%2F%2Fpublic.tableau.com%2F" />
+
+                    <param name="embed_code_version" value="3" />
+
+                    <param name="site_root" value="" />
+
+                    <param name="name"
+                           value="EVmarketperformancedashboard_17935581001030/Dashboard1" />
+
+                    <param name="tabs" value="no" />
+
+                    <param name="toolbar" value="yes" />
+
+                    <param name="language" value="en-GB" />
+
+                    <param name="display_spinner" value="yes" />
+
+                </object>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TECHNOLOGIES -->
+
+    <section class="content-card">
+
+        <h5>Tools & Technologies</h5>
+
+        <span class="tech">Tableau Public</span>
+        <span class="tech">SQL</span>
+        <span class="tech">Excel</span>
+        <span class="tech">HTML</span>
+        <span class="tech">CSS</span>
+        <span class="tech">Bootstrap</span>
+        <span class="tech">GitHub</span>
+        <span class="tech">GitHub Pages</span>
+
+    </section>
+
+
+    <!-- PROJECT LINKS -->
+
+    <section class="content-card text-center">
+
+        <h5>Project Resources</h5>
+
+        <a
+            href="https://github.com/TheRaahiCodes/EV-Market-Performance-Insights-Tableau"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link">
+            GitHub Repository
+        </a>
+
+        <a
+            href="https://public.tableau.com/views/EVmarketperformancedashboard_17935581001030/Dashboard1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link">
+            Tableau Dashboard
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        EV Market Performance & Insights<br>
+        Developed by Rahi | 2026
+    </footer>
+
 </div>
-    </div>
+
+
+<!-- TABLEAU SCRIPT -->
+
+<script type="text/javascript">
+
+    var divElement = document.getElementById('viz1793558917947');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+
+    function resizeTableau() {
+        var width = divElement.offsetWidth;
+        vizElement.style.width = '100%';
+        vizElement.style.height = width < 600 ? '1000px' : '800px';
+    }
+
+    resizeTableau();
+    window.addEventListener('resize', resizeTableau);
+
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+</script>
+
 </body>
 </html>
